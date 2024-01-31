@@ -1,0 +1,1 @@
+{'nome': 'Coca lata', 'preco': '20', 'quantidade': '90'}
