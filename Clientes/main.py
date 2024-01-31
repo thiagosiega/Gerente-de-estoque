@@ -107,21 +107,30 @@ def novo_cliente():
     janela2.geometry("400x300")
     janela2.title("Novo cliente")
 
+    id = 1
+    if os.listdir(cliente_file):
+        id = int(max([os.path.splitext(nome)[0] for nome in os.listdir(cliente_file)])) + 1
+                    
     def salvar_cliente():
         nome_cliente = nome_entry.get()
         credito_cliente = credito_entry.get()
         debito_cliente = debito_entry.get()
         cliente = {
+            "ID": id,
             "nome": nome_cliente,
             "credito": credito_cliente,
             "debito": debito_cliente,
             "compras": "Nao comprou nada ainda"    
         }
-        with open(os.path.join(cliente_file, nome_cliente + ".json"), "w") as f:
+        #verifica se o nome do cliente ja existe
+        if os.path.exists(os.path.join(cliente_file, str(id) + ".json")):
+            messagebox.showerror("Erro", "Cliente já existe!")
+            return
+        with open(os.path.join(cliente_file, str(id) + ".json"), "w") as f:
             json.dump(cliente, f)
+
         janela2.destroy()
         atualizar_lista_clientes()
-        janela2.destroy()
 
     label1 = tk.Label(janela2, text="Nome")
     label1.pack()
@@ -205,7 +214,7 @@ btn_voltar.place(x=500,y=10)
 label1.place(x=10, y=10)
 entry.place(x=80, y=10)
 btn.place(x=300, y=10)
-btn2.place(x=500, y=10)
+btn2.place(x=200, y=10)
 
 atualizar_lista_clientes()
 janela.mainloop()

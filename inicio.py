@@ -3,11 +3,20 @@ import os
 import subprocess
 import sys
 
+
 janela = tk.Tk()
 
 janela.geometry("600x300")
 janela.title("Gerente de estoque")
 
+depedencias = [
+    "pip install fuzzywuzzy",
+    "pip install python-Levenshtein",
+]
+
+for dep in depedencias:
+    subprocess.call(dep, shell=True)
+    
 texbtn = [
     "Estoque",
     "Clientes",

@@ -1,0 +1,10 @@
+{
+    "ID": 2,
+    "nome": "Anny",
+    "credito": "50",
+    "debito": "3",
+    "compras": [
+        "Coca cola 2L",
+        "Coca cola 2L"
+    ]
+}

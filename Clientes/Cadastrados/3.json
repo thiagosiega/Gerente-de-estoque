@@ -1,0 +1,15 @@
+{
+    "ID": 3,
+    "nome": "jp",
+    "credito": "0",
+    "debito": "0",
+    "compras": [
+        "Coca cola 2L",
+        "Coca lata",
+        "Coca lata",
+        "Coca cola 2L",
+        "Coca cola 2L",
+        "Coca cola 2L",
+        "Coca cola 2L"
+    ]
+}
