@@ -9,13 +9,31 @@ janela = tk.Tk()
 janela.geometry("600x300")
 janela.title("Gerente de estoque")
 
-depedencias = [
-    "pip install fuzzywuzzy",
-    "pip install python-Levenshtein",
-]
+file = "verificar.txt"
+if not os.path.exists(file):
+    with open(file, "w") as f:
+        f.write("1")
+        verificar = False
+else:
+    with open(file, "r") as f:
+        verificar = f.read()
+        if verificar == "1":
+            verificar = True
+        else:
+            verificar = False
 
-for dep in depedencias:
-    subprocess.call(dep, shell=True)
+if (verificar == True):
+    depedencias = [
+        "pip install fuzzywuzzy",
+        "pip install python-Levenshtein",
+    ]
+
+    for dep in depedencias:
+        subprocess.call(dep, shell=True)
+    with open(file, "w") as f:
+        f.write("0")
+
+
     
 texbtn = [
     "Estoque",

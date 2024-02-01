@@ -69,7 +69,7 @@ def fazer_pedido(mesa):
 
 def voltar():
     janela.destroy()
-    subprocess.run(["python", "inicio.py"])
+    subprocess.run(["python", "inicio.pyw"])
 
 btn_voltar = tk.Button(janela, text="Voltar", command=voltar, height=2, width=10, bg="blue", fg="white")
 

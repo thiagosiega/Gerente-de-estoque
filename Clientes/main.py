@@ -155,7 +155,7 @@ def novo_cliente():
 def Voltar():
     #eu sou burro 
     janela.destroy()
-    subprocess.Popen([sys.executable, "inicio.py"])
+    subprocess.Popen([sys.executable, "inicio.pyw"])
    
 
 janela = tk.Tk()

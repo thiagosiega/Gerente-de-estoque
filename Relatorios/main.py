@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import Button
 import os
 import json
+import subprocess
+import sys
+
 
 def main():
     root = tk.Tk()
@@ -35,6 +38,11 @@ def main():
     for venda in vendas:
         btn = Button(root, text=venda, command=lambda v=venda: relatorio(v))
         btn.pack()
+    
+    def Voltar():
+        subprocess.Popen([sys.executable, "inicio.pyw"])
+
+    btn_voltar = Button(root, text="Voltar", command=Voltar)
 
     root.mainloop()
 

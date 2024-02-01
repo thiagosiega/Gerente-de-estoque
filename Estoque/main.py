@@ -51,7 +51,7 @@ def novo_produto():
 
 def Voltar():
     janela.destroy()
-    subprocess.Popen([sys.executable, "inicio.py"])
+    subprocess.Popen([sys.executable, "inicio.pyw"])
     
 def Atualizar():
     #limpa o painel
